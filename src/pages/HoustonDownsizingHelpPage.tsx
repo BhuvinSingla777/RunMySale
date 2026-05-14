@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { Seo } from '../components/Seo'
 import {
   FIND_HELP,
@@ -138,7 +138,7 @@ const CONNECT_IMAGES = [
 ] as const
 
 export function HoustonDownsizingHelpPage() {
-  const [faqOpen, setFaqOpen] = useState<number | null>(null)
+  // const [faqOpen, setFaqOpen] = useState<number | null>(null)
 
   return (
     <>
