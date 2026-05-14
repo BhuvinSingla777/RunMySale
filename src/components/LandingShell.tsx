@@ -5,12 +5,12 @@ import './LandingShell.css'
 
 const LANDING_NAV = [
   { to: '/', label: 'Downsizing Help', short: 'Downsizing', end: true },
-  {
-    to: '/junk-removal-alternative',
-    label: 'Junk Removal Alternative',
-    short: 'Junk Removal',
-    end: false,
-  },
+  // {
+  //   to: '/junk-removal-alternative',
+  //   label: 'Junk Removal Alternative',
+  //   short: 'Junk Removal',
+  //   end: false,
+  // },
   {
     to: '/hidden-value-in-your-home',
     label: 'Hidden Value In Your Home',

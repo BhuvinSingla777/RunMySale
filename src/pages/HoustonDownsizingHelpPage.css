@@ -1,0 +1,775 @@
+/* Houston Downsizing Help Page — scoped module (.hd-page, .hd-*) */
+
+.hd-page {
+  --hd-orange: #ff6b35;
+  --hd-green: #4caf50;
+  --hd-blue: #1976d2;
+  --hd-teal: #004a7c;
+  --hd-light-blue: #e3f2fd;
+  --hd-dark-blue: #0d47a1;
+  --hd-charcoal: #373d44;
+  --hd-card-grey: #dfe3ea;
+  --hd-max: 1120px;
+  --hd-gutter: clamp(1rem, 4vw, 2rem);
+  --hd-radius-card: 14px;
+  --hd-text: #1a1a1a;
+  --hd-muted: #5c6678;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--hd-text);
+  background: #fff;
+}
+
+.hd-t-orange {
+  color: var(--hd-orange);
+}
+
+.hd-t-green {
+  color: var(--hd-green);
+}
+
+.hd-t-blue {
+  color: var(--hd-blue);
+}
+
+.hd-t-teal {
+  color: var(--hd-teal);
+}
+
+/* —— Hero —— */
+.hd-hero {
+  position: relative;
+  min-height: min(80vh, 800px);
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  background: #f8f9fa;
+}
+
+.hd-hero__photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hd-hero__wash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(248, 249, 250, 0.95) 0%,
+    rgba(248, 249, 250, 0.8) 40%,
+    rgba(248, 249, 250, 0.3) 70%,
+    rgba(248, 249, 250, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.hd-hero__shell {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: max(14px, env(safe-area-inset-top)) var(--hd-gutter) var(--hd-gutter);
+  max-width: calc(var(--hd-max) + 2 * var(--hd-gutter));
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hd-header-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 10px 18px 10px 14px;
+  background: #f5f5f5;
+  border-radius: 999px;
+  box-shadow:
+    0 4px 24px rgba(15, 23, 42, 0.07),
+    0 1px 3px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  max-width: 920px;
+  width: 100%;
+}
+
+.hd-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hd-logo__mark {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.hd-logo__wordmark {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hd-logo__run {
+  color: var(--hd-blue);
+}
+
+.hd-logo__mysale {
+  color: var(--hd-green);
+}
+
+.hd-btn-get {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--hd-blue);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.hd-btn-get:hover {
+  background: var(--hd-dark-blue);
+  transform: translateY(-1px);
+}
+
+.hd-hero__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  padding-top: 2rem;
+}
+
+.hd-hero__h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--hd-charcoal);
+}
+
+.hd-hero__h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--hd-charcoal);
+}
+
+.hd-hero__lead {
+  margin: 0 0 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--hd-muted);
+}
+
+.hd-hero__actions {
+  margin-bottom: 1rem;
+}
+
+.hd-hero__fine {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--hd-muted);
+}
+
+/* —— Buttons —— */
+.hd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.hd-btn--pill {
+  border-radius: 999px;
+}
+
+.hd-btn--blue {
+  background: var(--hd-blue);
+  color: #fff;
+}
+
+.hd-btn--blue:hover {
+  background: var(--hd-dark-blue);
+  transform: translateY(-1px);
+}
+
+.hd-btn--orange {
+  background: var(--hd-orange);
+  color: #fff;
+}
+
+.hd-btn--orange:hover {
+  background: #e55a2e;
+  transform: translateY(-1px);
+}
+
+.hd-btn--outline-dark {
+  background: transparent;
+  color: var(--hd-charcoal);
+  border: 2px solid var(--hd-charcoal);
+}
+
+.hd-btn--outline-dark:hover {
+  background: var(--hd-charcoal);
+  color: #fff;
+}
+
+/* —— Check Icon —— */
+.hd-check-ico {
+  width: 20px;
+  height: 20px;
+  color: var(--hd-blue);
+  flex-shrink: 0;
+}
+
+.hd-icon-svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* —— Connect Section —— */
+.hd-connect {
+  padding: clamp(3rem, 6vw, 5rem) var(--hd-gutter);
+  background: var(--hd-light-blue);
+}
+
+.hd-connect__grid {
+  max-width: var(--hd-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.hd-connect__visual {
+  width: 100%;
+}
+
+.hd-connect__images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  border-radius: var(--hd-radius-card);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 74, 124, 0.12);
+  background: #fff;
+  padding: 12px;
+}
+
+.hd-connect__image {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+  aspect-ratio: 1;
+}
+
+.hd-connect__image--1 {
+  grid-row: span 2;
+  aspect-ratio: 1 / 2;
+}
+
+.hd-connect__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hd-connect__h {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hd-connect__p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--hd-muted);
+}
+
+.hd-connect-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 2rem 0;
+}
+
+.hd-connect-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: #fff;
+  border-radius: var(--hd-radius-card);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid transparent;
+}
+
+.hd-connect-card--blue {
+  border-left-color: var(--hd-blue);
+}
+
+.hd-connect-card--green {
+  border-left-color: var(--hd-green);
+}
+
+.hd-connect-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hd-light-blue);
+  border-radius: 50%;
+  color: var(--hd-blue);
+  flex-shrink: 0;
+}
+
+.hd-connect-card__title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--hd-charcoal);
+}
+
+.hd-connect-card__body {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--hd-muted);
+}
+
+.hd-connect-card__foot {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--hd-muted);
+}
+
+.hd-connect__cta-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.hd-connect__cta-fine {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--hd-muted);
+}
+
+/* —— Houston Benefits Section —— */
+.hd-houston-benefits {
+  padding: clamp(3rem, 6vw, 5rem) var(--hd-gutter);
+  background: #fff;
+}
+
+.hd-houston-benefits__content {
+  max-width: var(--hd-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.hd-houston-benefits__h {
+  margin: 0 0 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--hd-charcoal);
+}
+
+.hd-houston-benefits__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.hd-houston-benefits__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--hd-charcoal);
+}
+
+.hd-houston-benefits__item svg {
+  color: var(--hd-blue);
+}
+
+.hd-houston-benefits__desc {
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--hd-muted);
+}
+
+.hd-houston-benefits__fine {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--hd-muted);
+}
+
+.hd-houston-benefits__image {
+  border-radius: var(--hd-radius-card);
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+}
+
+.hd-houston-benefits__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* —— Residents Section —— */
+.hd-residents {
+  padding: clamp(3rem, 6vw, 5rem) var(--hd-gutter);
+  background: var(--hd-light-blue);
+}
+
+.hd-residents__h {
+  margin: 0 0 3rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--hd-blue);
+}
+
+.hd-residents__grid {
+  max-width: var(--hd-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.hd-resident-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.hd-resident-card__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hd-resident-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hd-resident-card__title {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--hd-charcoal);
+}
+
+.hd-resident-card__line {
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.hd-resident-card__line--green {
+  background: var(--hd-green);
+}
+
+.hd-resident-card__line--orange {
+  background: var(--hd-orange);
+}
+
+/* —— Examples Section —— */
+.hd-examples {
+  padding: clamp(3rem, 6vw, 5rem) var(--hd-gutter);
+  background: #fff;
+}
+
+.hd-examples__h {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--hd-blue);
+  letter-spacing: 0.05em;
+}
+
+.hd-examples__desc {
+  margin: 0 0 3rem;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--hd-muted);
+}
+
+.hd-examples__grid {
+  max-width: var(--hd-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 16px;
+}
+
+.hd-example-item {
+  position: relative;
+  border-radius: var(--hd-radius-card);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.hd-example-item--large {
+  grid-row: span 2;
+}
+
+.hd-example-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hd-example-item__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* —— Process Section —— */
+.hd-process {
+  padding: clamp(3rem, 6vw, 5rem) var(--hd-gutter);
+  background: var(--hd-blue);
+  text-align: center;
+  color: #fff;
+}
+
+.hd-process__h {
+  margin: 0 0 3rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.hd-process__steps {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+.hd-process__steps::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 0;
+}
+
+.hd-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hd-process-step__number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--hd-blue);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hd-process-step__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  max-width: 150px;
+}
+
+.hd-process__fine {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* —— Final CTA —— */
+.hd-final-cta {
+  padding: clamp(3rem, 6vw, 5rem) var(--hd-gutter);
+  background: var(--hd-blue);
+  text-align: center;
+  color: #fff;
+}
+
+.hd-final-cta__h {
+  margin: 0 0 2rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hd-final-cta__fine {
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* —— Footer —— */
+.hd-foot {
+  padding: 2rem var(--hd-gutter);
+  background: var(--hd-charcoal);
+  color: #fff;
+  text-align: center;
+}
+
+.hd-foot__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hd-foot__social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hd-foot__social a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.hd-foot__social svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hd-foot__copy {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* —— Responsive Design —— */
+@media (max-width: 768px) {
+  .hd-hero__photo {
+    width: 100%;
+    height: 40%;
+  }
+  
+  .hd-hero__content {
+    max-width: 100%;
+    padding-top: 45%;
+  }
+  
+  .hd-connect__grid,
+  .hd-houston-benefits__content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hd-residents__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hd-examples__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 150px);
+  }
+  
+  .hd-process__steps {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .hd-process__steps::before {
+    display: none;
+  }
+  
+  .hd-connect__cta-row {
+    flex-direction: column;
+  }
+  
+  .hd-btn {
+    width: 100%;
+  }
+}

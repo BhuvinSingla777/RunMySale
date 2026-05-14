@@ -132,7 +132,7 @@ export function DownsizingHelpPage() {
       </header>
 
       <main id="main-content">
-        <section className="ds-hero ds-hero--figma" aria-label="Downsizing help hero">
+        {/* <section className="ds-hero ds-hero--figma" aria-label="Downsizing help hero">
           <div className="ds-hero__figma-wrap">
             <img
               className="ds-hero__figma-img"
@@ -211,7 +211,7 @@ export function DownsizingHelpPage() {
               Takes just a few minutes to explore. No obligation.
             </p>
           </div>
-        </section>
+        </section> */}
 
         <section className="ds-value ds-value--figma" aria-labelledby="ds-value-title">
           <h2 id="ds-value-title" className="sr-only">
